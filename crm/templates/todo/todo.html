@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <button class="uk-button uk-button-primary">New</button>
+  <div class="uk-overflow-auto">
+    <table class="uk-table uk-table-small uk-table-middle uk-table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Completed</th>
+          <th>Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for todo in todos %}
+          <tr>
+            {% if todo.is_completed %}
+              <td class="uk-text-success">{{ todo.title }}</td>
+              <td>
+                <input class="uk-checkbox" type="checkbox" aria-label="Checkbox" checked />
+              </td>
+              <td>{{ todo.created_at }}</td>
+              <td>
+                <button class="uk-button uk-button-default">Edit</button>
+                <button class="uk-button uk-button-danger">Delete</button>
+              </td>
+            {% else %}
+              <td class="uk-text-emphasis">{{ todo.title }}</td>
+              <td>
+                <input class="uk-checkbox" type="checkbox" aria-label="Checkbox" />
+              </td>
+              <td>{{ todo.created_at }}</td>
+              <td>
+                <button class="uk-button uk-button-default" type="submit"><a href="/todo/{{ todo.id }}">Edit</a></button>
+                <button class="uk-button uk-button-danger">Delete</button>
+              </td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <form action="post">
+    <div class="uk-fieldset">
+      <legend>Login</legend>
+    </div>
+
+    <div class="uk-margin">
+      <input type="text" placeholder="Username" aria-label="Username" class="uk-input" />
+    </div>
+
+    <div class="uk-margin">
+      <input type="password" placeholder="Password" aria-label="password" class="uk-input" />
+    </div>
+
+    <button class="uk-button uk-button-primary">Login</button>
+  </form>
+{% endblock %}
