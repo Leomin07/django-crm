@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    <fieldset class="uk-fieldset">
+      <legend class="uk-legend">Todo</legend>
+
+      <div class="uk-margin">
+        <input class="uk-input" type="text" placeholder="Title" aria-label="Title" maxlength="255" required value="{{ todo.title }}" />
+      </div>
+
+      <div class="uk-margin">
+        <input class="uk-input" type="text" placeholder="Complete" aria-label="Complete" maxlength="5" required value="{{ todo.is_completed }}" />
+      </div>
+
+      <div class="uk-margin">
+        <textarea class="uk-textarea" rows="5" placeholder="Note" aria-label="Note" maxlength="255" value="{{ todo.title }}"></textarea>
+      </div>
+
+      <div class="uk-margin">
+        <button class="uk-button uk-button-primary">Submit</button>
+      </div>
+    </fieldset>
+  </form>
+{% endblock %}
