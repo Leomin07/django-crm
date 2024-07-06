@@ -10,7 +10,7 @@ media/*
 __pycache__/
 *.py[cod]
 *$py.class
-
+tempCodeRunnerFile.sh
 # C extensions
 *.so
 
